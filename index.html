@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Graduation Shoe Scavenger Hunt</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f3ea;
+    color: #222;
+  }
+
+  header {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 1.25rem 1rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    margin: 0;
+  }
+
+  .subtitle {
+    margin-top: .4rem;
+    font-size: .95rem;
+  }
+
+  .pixel-row {
+    font-size: 2rem;
+    letter-spacing: .25rem;
+    margin-top: .75rem;
+  }
+
+  main {
+    padding: 1rem;
+    max-width: 600px;
+    margin: auto;
+  }
+
+  .score-box {
+    position: sticky;
+    top: 0;
+    background: #fff8dc;
+    border: 3px solid #222;
+    padding: .75rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: bold;
+    z-index: 10;
+  }
+
+  .item {
+    display: flex;
+    align-items: flex-start;
+    gap: .75rem;
+    background: white;
+    margin-bottom: .65rem;
+    padding: .85rem;
+    border: 2px solid #222;
+    box-shadow: 3px 3px 0 #222;
+  }
+
+  .item input {
+    transform: scale(1.4);
+    margin-top: .2rem;
+  }
+
+  .item label {
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+
+  button {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background: #222;
+    color: white;
+    border: none;
+    box-shadow: 4px 4px 0 #888;
+  }
+
+  button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #888;
+  }
+
+  #result {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: white;
+    border: 3px solid #222;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .small {
+    font-size: .85rem;
+    font-weight: normal;
+    margin-top: .4rem;
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🎓 Graduation Shoe Scavenger Hunt 👟</h1>
+  <div class="subtitle">Check off what you spot as students cross the stage.</div>
+  <div class="pixel-row">🎓 👠 👞 👟 ✨</div>
+</header>
+
+<main>
+  <div class="score-box">
+    Current Score: <span id="liveScore">0</span> points
+  </div>
+
+  <form id="huntForm">
+
+    <div class="item"><input type="checkbox" value="1"><label>White sneakers with a formal dress</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Cowboy boots under a gown</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Chunky platform heels</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Monochromatic men's outfit with matching shoes</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Loafers without socks</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Doc Martens with honors cords</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Glitter heels</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Jordan sneakers in school colors</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Practical block heels</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Shoes clearly chosen for comfort, not appearance</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>One person obviously regretting their shoe choice</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Ballet flats after abandoning heels</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Floral-patterned shoes</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Statement red shoes</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Birkenstocks worn with total confidence</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Patent leather dress shoes</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Shoes decorated for graduation photos</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Metallic heels</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Black sneakers trying to pass as dress shoes</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>White boots</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Someone carrying their heels instead of wearing them</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Velvet loafers</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Extremely high stilettos navigating stairs carefully</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Matching shoes between friends or partners</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Gender-neutral suit with fashion sneakers</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Clear heels</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Classic Converse with gown and cords</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Shoes that light up or sparkle in the sun</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Expensive shoes peeking out just enough to be noticed</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>House slippers energy disguised as formalwear</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Wedges sinking slightly into grass</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>A pair of shoes that absolutely do not match the rest of the outfit</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Customized graduation cap and customized shoes</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Leather Chelsea boots</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Tiny emergency Band-Aid visible on the back of someone's heel</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Gold or silver dress shoes</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Someone walking barefoot back to their seat</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Matching manicure and shoe color</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Minimalist all-black outfit with dramatic shoes</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>The same sneaker model appearing at least five times</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Shoes purchased specifically for graduation and nowhere else</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>"These are technically business casual" sneakers</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Satin heels</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>A shoe choice that makes perfect sense for the person's major</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Orthopedic comfort shoes paired with academic regalia</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>Suede shoes on a suspiciously damp day</label></div>
+    <div class="item"><input type="checkbox" value="1"><label>One truly unforgettable pair of shoes everyone nearby notices</label></div>
+
+    <button type="submit">Submit Score</button>
+  </form>
+
+  <div id="result"></div>
+</main>
+
+<script>
+  const form = document.getElementById("huntForm");
+  const liveScore = document.getElementById("liveScore");
+  const result = document.getElementById("result");
+  const checkboxes = document.querySelectorAll("input[type='checkbox']");
+
+  function calculateScore() {
+    let score = 0;
+    checkboxes.forEach(box => {
+      if (box.checked) score += Number(box.value);
+    });
+    return score;
+  }
+
+  function updateLiveScore() {
+    liveScore.textContent = calculateScore();
+  }
+
+  checkboxes.forEach(box => {
+    box.addEventListener("change", updateLiveScore);
+  });
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const score = calculateScore();
+    const total = checkboxes.length;
+
+    let message = "";
+
+    if (score < 10) {
+      message = "Respectable observational warm-up.";
+    } else if (score < 25) {
+      message = "Strong faculty-level shoe surveillance.";
+    } else if (score < 40) {
+      message = "Excellent work. You were paying attention.";
+    } else {
+      message = "Elite graduation footwear scholarship.";
+    }
+
+    result.innerHTML = `
+      Final Score: ${score} / ${total}
+      <div class="small">${message}</div>
+    `;
+  });
+</script>
+
+</body>
+</html>
